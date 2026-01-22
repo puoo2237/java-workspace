@@ -15,11 +15,22 @@ public class TestClass01 {
 		set.add("김밥");
 		System.out.println(set);
 
-		set.remove("안녕");
-		System.out.println(set);
-		Iterator<String> it = set.iterator("라면");
-		
-		
+		Iterator<String> it = set.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
+
+//		set.remove("안녕");
+//		System.out.println(set);
+//		System.out.println(it.hasNext());
+//		System.out.println(it.next());
+//		System.out.println(it.hasNext());
+
+		Iterator<String> setIt = set.iterator();
+		for (; setIt.hasNext();) {
+			String s = setIt.next();
+			System.out.println(s);
+		}
 
 		ArrayList<String> arr = new ArrayList<String>();
 		arr.add("안녕");
