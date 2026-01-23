@@ -32,7 +32,9 @@ public class MemberService {
 		}
 	}
 
-	public void updateInfo(int updateNum) {
+	public void updateInfo() {
+		int updateNum = input.nextInt();
+		
 		switch (updateNum) {
 		case 1:
 			// 1) 이름 수정
@@ -132,8 +134,7 @@ public class MemberService {
 				// 합, 등급도 같이 수정이 되어야 함
 				if (checkMember()) {
 					System.out.print("1. 이름 수정 2. 국어 점수 수정 3. 영어 점수 수정 4. 수학 점수 수정\n>>> ");
-					int updateNum = input.nextInt();
-					updateInfo(updateNum);
+					updateInfo();
 				} else {
 					System.out.println("학생 등록을 완료해주세요.");
 				}
