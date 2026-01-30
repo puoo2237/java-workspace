@@ -14,6 +14,14 @@ public class MemberRepository {
 		}
 	}
 
+	public MemberDto getMemberDto(String username, String password, String name) {
+		MemberDto user = new MemberDto();
+		user.setName(name);
+		user.setPassword(password);
+		user.setUsername(username);
+		
+		return user;
+	}
 	public List<MemberDto> findAll() {
 		return list;
 	}
@@ -41,6 +49,7 @@ public class MemberRepository {
 		}).orElse(false);
 	}
 
+	
 	public boolean deleteByUsername(String username) {
 		return list.removeIf(data -> data.getUsername().equals(username));
 	}
